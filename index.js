@@ -1,7 +1,7 @@
 (function () {
   var itemFetcher = require('./itemFetcher');
   var datastore = require('./datastore');
-  var analyser = require('./analyser');
+  var analyzer = require('./analyzer');
   var dispatcher = require('./dispatcher');
 
   var arguments = process.argv.slice(2);
@@ -37,11 +37,16 @@
       }
     break;
 
+    case analyze:
+      analyze.run();
+    break;
+
     default:
       console.log('Available commands:\n' +
                   '  refresh            Refresh item list and prices\n' +
                   '  refresh items      Refresh item list\n' +
-                  '  refresh prices     Refresh prices');
+                  '  refresh prices     Refresh prices\n' +
+                  '  analyze            Analyze results');
   }
 
 })();

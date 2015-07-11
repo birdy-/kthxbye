@@ -6,9 +6,7 @@
   };
 
   Analyser.prototype.initEvents = function () {
-    dispatcher.on('Datastore.New.Overview', function (doc) {
-      console.log(doc);
-    });
+
   };
 
   module.exports = new Analyser();
