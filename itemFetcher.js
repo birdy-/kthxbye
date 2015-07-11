@@ -107,10 +107,9 @@
     for (var i = 0; i < items.length; i++) {
       var index = i;
       var hash = typeof items[index] === 'string' ? items[index] : items[index].name;
-      setTimeout(function () {
-        var url = self.constructUrl('overview', { 'market_hash_name': hash });
-        self.call(url, 'ItemFetcher.New.Overview', hash);
-      }, DEFAULT_INTERVAL*i);
+      setTimeout(function (hash) {
+        self.overview(hash);
+      }, DEFAULT_INTERVAL*i, hash);
     }
   };
 
