@@ -136,7 +136,7 @@
     var self = this;
     dispatcher.on(eventName, function (data) {
       console.log('Receive 10 items from ' + data.start);
-      var total_count = 30;
+      var total_count = data.total_count;
       var start = data.start + pagesize;
 
       allData = allData.concat(data.results);
